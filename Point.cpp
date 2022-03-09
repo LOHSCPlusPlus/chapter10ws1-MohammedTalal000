@@ -1,4 +1,7 @@
 #include "Point.h"
+#include <iostream>
+#include <math.h>
+using namespace std;
 
 // Notice how when we use field names in the functions that
 // belong to Point, we can just use the name without a dot operator.
@@ -7,3 +10,34 @@ Point::Point() {
     y = 0.0;
 }
 
+Point::Point(double xVal, double yVal) {
+  x = xVal;
+  y = yVal;
+}
+// Accessors and Mutators
+// double Point::getX() {
+//   return x;
+// }
+
+// double Point::getY() {
+//   return y;
+// }
+
+// void Point::setX(double xVal) {
+//   x = xVal;
+// }
+
+// void Point::setY(double yVal) {
+//   y = yVal;
+// }
+
+void Point::print() {
+  cout << "x: " << x << " y: " << y << endl;
+}
+
+double Point::calDistance(Point other) {
+  double xVal = pow(x - other.x, 2);
+  double yVal = pow(y - other.y, 2);
+  double dist = sqrt(xVal + yVal);
+  return dist;
+}
